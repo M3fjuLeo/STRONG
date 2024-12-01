@@ -4,6 +4,7 @@ import Exercises from "./pages/Exercises";
 import History from "./pages/History";
 import Home from "./pages/Home";
 import Settings from "./pages/Settings";
+import { Client } from "appwrite";
 
 function App() {
   return (
