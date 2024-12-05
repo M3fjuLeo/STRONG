@@ -9,13 +9,13 @@ interface LinkProps {
 
 const Link = ({ title, to, icon }: LinkProps) => {
   return (
-    <li>
+    <li className="w-full">
       <NavLink
         to={to}
-        className={`flex p-2 rounded-md items-center gap-2 text-2xl font-normal hover:bg-blue-500 duration-300 hover:text-white`}
+        className={`flex lg:flex-row flex-col p-2 rounded-md items-center gap-2 text-2xl font-normal hover:bg-blue-500 duration-300 hover:text-white`}
       >
         {icon}
-        <span className="text-xl">{title}</span>
+        <span className="text-xl hidden lg:block">{title}</span>
       </NavLink>
     </li>
   );
