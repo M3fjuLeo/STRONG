@@ -1,16 +1,22 @@
 import supabase from "./supabase";
 
-export type Exercise = {
+export interface Exercise {
   id: number;
   name: string;
   muscleGroup: string;
+  equipment: string;
   description: string;
-};
+}
 
 export async function getExercises() {
-  let { data, error } = await supabase
-    .from<Exercise, any>("Exercises")
-    .select("id, name, muscleGroup, description");
+  const { data, error } = await supabase
+    .from<Exercise>("Exercises")
+    .select("id, name, muscleGroup, equipment, description");
+
+  if (error) {
+    console.error("Error fetching exercises:", error.message);
+    return { data: null };
+  }
 
   return { data };
 }

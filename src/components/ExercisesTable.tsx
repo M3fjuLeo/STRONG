@@ -20,7 +20,7 @@ const ExercisesTable = () => {
         >
           <span className="font-bold">{exercise.name}</span>
           <span>{exercise.muscleGroup}</span>
-          <span className="hidden sm:block">{exercise.muscleGroup}</span>
+          <span className="hidden sm:block">{exercise.equipment}</span>
         </div>
       ))}
     </div>

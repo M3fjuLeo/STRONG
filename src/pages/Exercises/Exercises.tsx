@@ -6,7 +6,7 @@ import Heading from "../../ui/Heading";
 import Modal from "../../ui/Modal";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
-import NewExerciseForm from "../../components/NewExerciseForm";
+import NewExerciseForm from "../../components/CreateExerciseForm";
 
 const Exercises = () => {
   return (
@@ -22,7 +22,7 @@ const Exercises = () => {
           </Modal.Open>
 
           <Modal.Window name="new">
-            <NewExerciseForm />
+            {({ close }) => <NewExerciseForm onCloseModal={close} />}
           </Modal.Window>
         </Modal>
       </div>
