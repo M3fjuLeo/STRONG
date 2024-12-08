@@ -1,12 +1,9 @@
 import React from "react";
 import ExercisesTable from "../../components/ExercisesTable";
 import { IoMdAdd } from "react-icons/io";
-
 import Heading from "../../ui/Heading";
 import Modal from "../../ui/Modal";
-import Header from "../../components/Header";
-import Sidebar from "../../components/Sidebar";
-import NewExerciseForm from "../../components/CreateExerciseForm";
+import CreateExerciseForm from "../../components/CreateExerciseForm";
 
 const Exercises = () => {
   return (
@@ -22,7 +19,7 @@ const Exercises = () => {
           </Modal.Open>
 
           <Modal.Window name="new">
-            {({ close }) => <NewExerciseForm onCloseModal={close} />}
+            <CreateExerciseForm />
           </Modal.Window>
         </Modal>
       </div>

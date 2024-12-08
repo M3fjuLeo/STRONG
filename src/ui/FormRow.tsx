@@ -1,19 +1,22 @@
 import React from "react";
+import { FieldError } from "react-hook-form";
 
 interface FormRowProps {
-  name: string;
+  error?: FieldError | string;
   label: string;
+  children: React.ReactElement;
 }
 
-const FormRow = ({ name, label }: FormRowProps) => {
+const FormRow = ({ label, children, error }: FormRowProps) => {
+  const errorMessage = typeof error === "string" ? error : error?.message;
+
   return (
     <div className="flex items-center justify-between border-b-[1px] py-4">
-      <label htmlFor={label}>{name}</label>
-      <input
-        id={label}
-        type="text"
-        className="border p-2 rounded-md h-10 w-[15rem]"
-      />
+      <label htmlFor={children.props.id}>{label}</label>
+      <div className="flex flex-col gap-2">
+        {children}
+        {error && <span className="text-red-500 text-sm">{errorMessage}</span>}
+      </div>
     </div>
   );
 };

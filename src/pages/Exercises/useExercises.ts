@@ -1,9 +1,7 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getExercises } from "../../services/apiExercises";
 
 export function useExercises() {
-  const queryClient = useQueryClient();
-
   const {
     isLoading,
     data: { data: exercises } = {},

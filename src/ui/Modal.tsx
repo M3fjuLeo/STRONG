@@ -65,8 +65,6 @@ function Window({ children, name }: WindowProps) {
         ref={ref}
         className="fixed top-[50%] bg-white left-[50%] rounded-lg -translate-x-1/2 -translate-y-1/2 shadow-lg py-[3.2rem] px-[4rem] transition-all"
       >
-        <button onClick={close}>X</button>
-
         <div>{cloneElement(children, { onCloseModal: close })}</div>
       </div>
     </div>,

@@ -9,14 +9,30 @@ export interface Exercise {
 }
 
 export async function getExercises() {
-  const { data, error } = await supabase
-    .from<Exercise>("Exercises")
-    .select("id, name, muscleGroup, equipment, description");
+  const { data, error } = await supabase.from("exercises").select("*");
 
   if (error) {
-    console.error("Error fetching exercises:", error.message);
-    return { data: null };
+    console.error(error.message);
+    throw new Error("Error fetching exercises:");
   }
 
   return { data };
 }
+
+export async function createExercise(newExercise: Omit<Exercise, "id">) {
+  // Omit usówa pole 'id' poniewaz baza danych sama ustawia 'id'
+
+  const { data, error } = await supabase
+    .from("exercises")
+    .insert([newExercise])
+    .select()
+    .single();
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+}
+
+export default { getExercises };
