@@ -1,5 +1,5 @@
 import React from "react";
-import ExercisesTable from "../../components/ExercisesTable";
+import ExercisesTable from "./ExercisesTable";
 import { IoMdAdd } from "react-icons/io";
 import Heading from "../../ui/Heading";
 import Modal from "../../ui/Modal";

@@ -36,3 +36,11 @@ export async function createExercise(newExercise: Omit<Exercise, "id">) {
 }
 
 export default { getExercises };
+
+export async function deleteExercise(id: number | string) {
+  const { error } = await supabase.from("exercises").delete().eq("id", id);
+
+  if (error) {
+    throw new Error("Exercise could not be deleted");
+  }
+}
