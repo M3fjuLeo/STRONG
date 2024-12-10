@@ -8,8 +8,6 @@ const ExercisesTable = () => {
   const { isLoading, exercises } = useExercises();
   const { isDeleting, deleteExercise } = useDeleteExercise();
 
-  console.log(exercises);
-
   return (
     <div className="border rounded-md bg-white">
       <div className="p-4 hidden bg-gray-50 sm:grid grid-cols-3">

@@ -38,14 +38,17 @@ const CreateExerciseForm = ({ onCloseModal }: CreateExerciseFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-[40rem]">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="lg:w-[40rem] w-[20rem] sm:w-[25rem] md:w-[30rem]"
+    >
       <FormRow label="Name" error={errors.name?.message}>
         <input
           disabled={isCreating}
           type="text"
           id="name"
           {...register("name", { required: "This field is required" })}
-          className="border p-2 rounded-md h-10 w-[15rem]"
+          className="border p-2 rounded-md h-10 w-full lg:w-[15rem]"
         />
       </FormRow>
       <FormRow label="Muscle Group" error={errors.muscleGroup?.message}>
@@ -54,7 +57,7 @@ const CreateExerciseForm = ({ onCloseModal }: CreateExerciseFormProps) => {
           type="text"
           id="muscleGroup"
           {...register("muscleGroup", { required: "This field is required" })}
-          className="border p-2 rounded-md h-10 w-[15rem]"
+          className="border p-2 rounded-md h-10 w-full lg:w-[15rem]"
         />
       </FormRow>
       <FormRow label="Equipment" error={errors.equipment?.message}>
@@ -63,16 +66,15 @@ const CreateExerciseForm = ({ onCloseModal }: CreateExerciseFormProps) => {
           type="text"
           id="equipment"
           {...register("equipment", { required: "This field is required" })}
-          className="border p-2 rounded-md h-10 w-[15rem]"
+          className="border p-2 rounded-md h-10 w-full lg:w-[15rem]"
         />
       </FormRow>
       <FormRow label="Description">
         <textarea
           disabled={isCreating}
           id="description"
-          cols={50}
           rows={4}
-          className="border p-1"
+          className="border p-1 lg:w-[20rem]"
         ></textarea>
       </FormRow>
       <div className="mt-10 flex justify-end gap-4">

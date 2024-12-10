@@ -9,7 +9,7 @@ const AppLayout = () => {
       <Sidebar />
       <div className="flex flex-col w-full h-lvh">
         <Header />
-        <div className="pt-[4rem] px-[4.8rem] overflow-scroll pb-[6.4rem]">
+        <div className="pt-[2rem] lg:pt-[4rem] px-[2rem] lg:px-[4.8rem] overflow-scroll pb-[6.4rem]">
           <div className="max-w-[75rem] my-0 mx-auto flex flex-col gap-[3.2rem]">
             <Outlet />
           </div>
