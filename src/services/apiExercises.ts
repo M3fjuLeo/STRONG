@@ -1,4 +1,4 @@
-import supabase from "./supabase";
+import supabase, { supabaseUrl } from "./supabase";
 
 export interface Exercise {
   id: number;
@@ -6,6 +6,7 @@ export interface Exercise {
   muscleGroup: string;
   equipment: string;
   description: string;
+  image: File;
 }
 
 export async function getExercises() {
@@ -22,20 +23,34 @@ export async function getExercises() {
 export async function createExercise(newExercise: Omit<Exercise, "id">) {
   // Omit usówa pole 'id' poniewaz baza danych sama ustawia 'id'
 
+  const imageName = `${Math.random()}-${newExercise.image.name}`.replace(
+    "/",
+    ""
+  );
+  const imagePath = `${supabaseUrl}/storage/v1/object/public/exercise-images/${imageName}`;
+
+  const { error: storageError } = await supabase.storage
+    .from("exercise-images")
+    .upload(imageName, newExercise.image);
+
+  if (storageError) {
+    console.error(storageError);
+    throw new Error("Image could not be uploaded");
+  }
+
   const { data, error } = await supabase
     .from("exercises")
-    .insert([newExercise])
+    .insert([{ ...newExercise, image: imagePath || null }])
     .select()
     .single();
 
   if (error) {
-    throw new Error(error.message);
+    console.error(error);
+    throw new Error("Exercise could not be created");
   }
 
   return data;
 }
-
-export default { getExercises };
 
 export async function deleteExercise(id: number | string) {
   const { error } = await supabase.from("exercises").delete().eq("id", id);
@@ -44,3 +59,4 @@ export async function deleteExercise(id: number | string) {
     throw new Error("Exercise could not be deleted");
   }
 }
+export default { getExercises };
