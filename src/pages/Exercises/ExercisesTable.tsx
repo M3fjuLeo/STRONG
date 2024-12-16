@@ -4,9 +4,15 @@ import { useDeleteExercise } from "./useDeleteExercise";
 import { useExercises } from "./useExercises";
 import { Exercise } from "../../services/apiExercises";
 
-const ExercisesTable = () => {
+const ExercisesTable = ({ filteredValue }) => {
   const { isLoading, exercises } = useExercises();
-  const { isDeleting, deleteExercise } = useDeleteExercise();
+  const filteredExercises =
+    filteredValue === "all" || !filteredValue
+      ? exercises
+      : exercises?.filter(
+          (exercise) =>
+            exercise.muscleGroup.toLowerCase() === filteredValue.toLowerCase()
+        );
 
   return (
     <div className="border rounded-md bg-white">
@@ -16,7 +22,7 @@ const ExercisesTable = () => {
         <span>EQUIPMENT</span>
       </div>
       {isLoading && <div className="text-center">Loading...</div>}
-      {exercises?.map((exercise: Exercise) => (
+      {filteredExercises?.map((exercise: Exercise) => (
         <ExerciseRow exercise={exercise} key={exercise.id} />
       ))}
     </div>

@@ -23,7 +23,7 @@ const ConfirmDelete = ({
 
       <div className="flex gap-4 items-center justify-end">
         <CancelButton onClick={onCloseModal}>Cancel</CancelButton>
-        <ConfirmButton disabled={disabled} onClick={onClick}>
+        <ConfirmButton type="danger" disabled={disabled} onClick={onClick}>
           Delete
         </ConfirmButton>
       </div>

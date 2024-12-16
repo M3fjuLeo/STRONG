@@ -8,18 +8,19 @@ import ConfirmDelete from "../../ui/ConfirmDelete";
 
 interface ExerciseRowProps {
   exercise: {
-    id: string;
+    id: string | number;
     name: string;
-    image: string;
+    image: string | File;
     muscleGroup: string;
     equipment: string;
+    description?: string;
   };
 }
 
 const ExerciseRow = ({ exercise }: ExerciseRowProps) => {
   const { isDeleting, deleteExercise } = useDeleteExercise();
 
-  const { id, name, muscleGroup, equipment, image } = exercise;
+  const { id, name, muscleGroup, equipment } = exercise;
 
   return (
     <div

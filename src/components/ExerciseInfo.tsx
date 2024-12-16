@@ -5,8 +5,8 @@ interface ExerciseInfoProps {
   exercise: {
     name: string;
     equipment: string;
-    image: string;
-    description: string;
+    image: string | File;
+    description?: string;
   };
 }
 
