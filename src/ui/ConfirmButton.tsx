@@ -3,7 +3,7 @@ import React from "react";
 interface ConfirmButtonProps {
   children: React.ReactNode;
   disabled: boolean;
-  onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   type?: "danger";
 }
 

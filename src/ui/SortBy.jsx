@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 
 const SortBy = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const sortBy = searchParams.get("muscleGroup") || "";
+  // const sortBy = searchParams.get("muscleGroup") || "";
 
   function handleChange(e) {
     searchParams.set("muscleGroup", e.target.value);
