@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ConfirmButton from "../ui/ConfirmButton";
+import SpinnerMini from "../ui/SpinnerMini";
 import { useLogin } from "./useLogin";
 
 const LoginForm = () => {
@@ -42,7 +43,9 @@ const LoginForm = () => {
         />
       </div>
 
-      <ConfirmButton disabled={isLoading}>Login</ConfirmButton>
+      <ConfirmButton disabled={isLoading}>
+        {isLoading ? <SpinnerMini /> : "Log in"}
+      </ConfirmButton>
     </form>
   );
 };

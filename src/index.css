@@ -5,3 +5,16 @@
 .active {
   @apply bg-blue-500 text-white;
 }
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.spinner-mini {
+  width: 1.6rem;
+  height: 1.6rem;
+  animation: rotate 1.5s infinite linear;
+  display: flex;
+}

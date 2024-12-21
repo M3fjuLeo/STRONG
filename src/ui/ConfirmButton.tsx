@@ -18,7 +18,7 @@ const ConfirmButton = ({
       type="submit"
       disabled={disabled}
       onClick={onClick}
-      className={`cursor-pointer py-2 px-4 text-white ${
+      className={`cursor-pointer items-center flex justify-center py-2 px-4 text-white ${
         type === "danger" ? "bg-red-500" : "bg-blue-500"
       } rounded-md`}
     >
