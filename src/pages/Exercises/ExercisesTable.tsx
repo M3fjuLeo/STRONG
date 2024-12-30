@@ -1,6 +1,5 @@
 import React from "react";
 import ExerciseRow from "./ExerciseRow";
-import { useDeleteExercise } from "./useDeleteExercise";
 import { useExercises } from "./useExercises";
 import { Exercise } from "../../services/apiExercises";
 

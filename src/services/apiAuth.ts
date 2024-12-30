@@ -1,3 +1,4 @@
+import { SignUpProps } from "../authentication/useSignup";
 import supabase from "./supabase";
 
 export interface LoginProps {
@@ -9,6 +10,22 @@ export async function login({ email, password }: LoginProps) {
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
+  });
+
+  if (error) throw new Error(error.message);
+
+  return data;
+}
+
+export async function signup({ fullName, email, password }: SignUpProps) {
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        fullName,
+      },
+    },
   });
 
   if (error) throw new Error(error.message);

@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../ui/Logo";
 import DarkModeToggle from "./DarkModeToggle";
-import Logout from "./Logout";
+import Logout from "../authentication/Logout";
 
 const Header = () => {
   return (

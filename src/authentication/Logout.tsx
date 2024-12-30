@@ -1,6 +1,6 @@
 import React from "react";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
-import { useLogout } from "../authentication/useLogout";
+import { useLogout } from "./useLogout";
 import ButtonIcon from "../ui/ButtonIcon";
 
 const Logout = () => {

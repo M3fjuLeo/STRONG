@@ -3,9 +3,10 @@ import ExercisesTable from "./ExercisesTable";
 import { IoMdAdd } from "react-icons/io";
 import Heading from "../../ui/Heading";
 import Modal from "../../ui/Modal";
-import SortBy from "../../ui/SortBy";
+
 import CreateExerciseForm from "../../components/CreateExerciseForm";
 import { useSearchParams } from "react-router-dom";
+import SortBy from "../../ui/SortBy";
 
 const Exercises = () => {
   const [searchParams] = useSearchParams();
