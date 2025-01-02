@@ -9,7 +9,7 @@ const Header = () => {
       <div className="lg:hidden block">
         <Logo />
       </div>
-      <div className="flex">
+      <div className="flex items-center">
         <DarkModeToggle />
         <Logout />
       </div>
