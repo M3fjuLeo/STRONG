@@ -1,6 +1,5 @@
 import React from "react";
-import CancelButton from "./CancelButton";
-import ConfirmButton from "./ConfirmButton";
+import Button from "./Button";
 
 interface ConfirmDeleteProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -22,10 +21,12 @@ const ConfirmDelete = ({
       </p>
 
       <div className="flex gap-4 items-center justify-end">
-        <CancelButton onClick={onCloseModal}>Cancel</CancelButton>
-        <ConfirmButton type="danger" disabled={disabled} onClick={onClick}>
+        <Button type="button" onClick={onCloseModal}>
+          Cancel
+        </Button>
+        <Button type="submit" disabled={disabled} onClick={onClick}>
           Delete
-        </ConfirmButton>
+        </Button>
       </div>
     </div>
   );

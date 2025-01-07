@@ -2,10 +2,9 @@ import React from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import AuthHeader from "../ui/AuthHeader";
 import AuthInputRow from "../ui/AuthInputRow";
-import AuthInput from "../ui/AuthInputRow";
-import ConfirmButton from "../ui/ConfirmButton";
+import Button from "../ui/Button";
 import SpinnerMini from "../ui/SpinnerMini";
-import { SignUpProps, useSignup } from "./useSignup";
+import { useSignup } from "./useSignup";
 
 const SignupForm = () => {
   const { register, handleSubmit, getValues, reset, formState } =
@@ -80,9 +79,9 @@ const SignupForm = () => {
           />
         </AuthInputRow>
 
-        <ConfirmButton disabled={isLoading}>
+        <Button disabled={isLoading}>
           {isLoading ? <SpinnerMini /> : "Create account"}
-        </ConfirmButton>
+        </Button>
       </form>
     </div>
   );

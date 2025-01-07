@@ -1,9 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useCreateExercise } from "../pages/Exercises/useCreateExercise";
-import CancelButton from "../ui/CancelButton";
-import ConfirmButton from "../ui/ConfirmButton";
 import FormRow from "../ui/FormRow";
+import Button from "../ui/Button";
 
 interface CreateExerciseFormProps {
   onCloseModal: () => void;
@@ -106,8 +105,12 @@ const CreateExerciseForm = ({ onCloseModal }: CreateExerciseFormProps) => {
         />
       </FormRow>
       <div className="mt-10 flex justify-end gap-4">
-        <CancelButton onClick={() => onCloseModal?.()}>Cancel</CancelButton>
-        <ConfirmButton disabled={isCreating}>Add New Exercise</ConfirmButton>
+        <Button variant="empty" type="button" onClick={() => onCloseModal?.()}>
+          Cancel
+        </Button>
+        <Button type="submit" variant="primary" disabled={isCreating}>
+          Add New Exercise
+        </Button>
       </div>
     </form>
   );
