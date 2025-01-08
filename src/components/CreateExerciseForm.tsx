@@ -5,7 +5,7 @@ import FormRow from "../ui/FormRow";
 import Button from "../ui/Button";
 
 interface CreateExerciseFormProps {
-  onCloseModal: () => void;
+  onCloseModal?: () => void;
 }
 
 interface ExerciseFormProps {

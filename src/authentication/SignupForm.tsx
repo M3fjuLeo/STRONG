@@ -79,7 +79,7 @@ const SignupForm = () => {
           />
         </AuthInputRow>
 
-        <Button disabled={isLoading}>
+        <Button variant="primary" type="submit" disabled={isLoading}>
           {isLoading ? <SpinnerMini /> : "Create account"}
         </Button>
       </form>

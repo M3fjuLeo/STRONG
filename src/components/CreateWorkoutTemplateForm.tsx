@@ -1,20 +1,30 @@
 import React from "react";
-import LoginForm from "../authentication/LoginForm";
 import Modal from "../ui/Modal";
 import Button from "../ui/Button";
+import ExercisesToTemplate from "../template/ExercisesToTemplate";
+import { useTemplate } from "../template/useTemplate";
+import { useQueryClient } from "@tanstack/react-query";
 
 const CreateWorkoutTemplateForm = ({ setOpenForm }) => {
+  const { getSelectedExercises } = useTemplate();
+  const queryClient = useQueryClient();
+
   function addExercise(e) {
     e.preventDefault();
+    queryClient.invalidateQueries(["selectedExercises"]);
   }
 
   return (
     <div className="">
       <form className="flex flex-col gap-4">
         <div className="flex justify-between">
-          <div className="flex flex-col">
-            <input type="text" defaultValue="Workout Name"></input>
-            <input type="text" placeholder="Notes" />
+          <div className="flex flex-col gap-2">
+            <input
+              className="px-2 py-1 rounded-md"
+              type="text"
+              defaultValue="Workout Name"
+            ></input>
+            <textarea className="px-2 py-1 rounded-md" placeholder="Notes" />
           </div>
           <button
             type="button"
@@ -22,6 +32,14 @@ const CreateWorkoutTemplateForm = ({ setOpenForm }) => {
           >
             Finish
           </button>
+        </div>
+
+        <div>
+          {getSelectedExercises().map((exercise) => (
+            <div key={exercise.id}>
+              <span>{exercise.name}</span>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-col gap-2">
@@ -40,7 +58,7 @@ const CreateWorkoutTemplateForm = ({ setOpenForm }) => {
             </Button>
 
             <Modal.Window name="add">
-              <LoginForm />
+              <ExercisesToTemplate />
             </Modal.Window>
           </Modal>
         </div>
