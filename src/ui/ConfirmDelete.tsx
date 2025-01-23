@@ -21,10 +21,15 @@ const ConfirmDelete = ({
       </p>
 
       <div className="flex gap-4 items-center justify-end">
-        <Button type="button" onClick={onCloseModal}>
+        <Button variant="empty" type="button" onClick={onCloseModal}>
           Cancel
         </Button>
-        <Button type="submit" disabled={disabled} onClick={onClick}>
+        <Button
+          variant="danger"
+          type="submit"
+          disabled={disabled}
+          onClick={onClick}
+        >
           Delete
         </Button>
       </div>
