@@ -32,7 +32,7 @@ const SignupForm = () => {
         description="Hello! Please enter your details"
       />
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form onSubmit={onSubmit} className="flex flex-col gap-4">
         <AuthInputRow label="Full Name" error={errors?.fullName?.message}>
           <input
             {...register("fullName", { required: "This field is required" })}

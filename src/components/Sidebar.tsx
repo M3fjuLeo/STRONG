@@ -16,7 +16,7 @@ const Sidebar = () => {
       <ul className="gap-2 justify-around flex lg:flex-col">
         <Link to="home" title="Home" icon={<HiOutlineHome />} />
         <Link to="exercises" title="Exercises" icon={<CiDumbbell />} />
-        <Link to="history" title="History" icon={<HiOutlineCalendarDays />} />
+        <Link to="Rutines" title="Rutines" icon={<HiOutlineCalendarDays />} />
         <Link to="settings" title="Settings" icon={<HiOutlineCog6Tooth />} />
       </ul>
     </div>
