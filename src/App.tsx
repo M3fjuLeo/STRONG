@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
+import MuscleDescriptionPage from "./pages/MuscleDescriptionPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,6 +24,10 @@ function App() {
         <Routes>
           <Route element={<AppLayout />}>
             <Route index element={<Navigate replace to="home" />} />
+            <Route
+              path="muscle-description"
+              element={<MuscleDescriptionPage />}
+            />
             <Route path="home" element={<Home />} />
             <Route path="exercises" element={<Exercises />} />
             <Route path="history" element={<History />} />

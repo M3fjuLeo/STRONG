@@ -6,6 +6,13 @@
   @apply bg-blue-500 text-white;
 }
 
+.bodymap {
+  @apply text-gray-200;
+  @apply hover:text-blue-500;
+  @apply duration-200;
+  @apply cursor-pointer;
+}
+
 @keyframes rotate {
   to {
     transform: rotate(1turn);
