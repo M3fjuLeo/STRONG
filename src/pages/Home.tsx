@@ -1,4 +1,4 @@
-import Bodymap from "../ui/bodymap";
+import Bodymap from "../ui/Bodymap";
 
 const Home = () => {
   return (
