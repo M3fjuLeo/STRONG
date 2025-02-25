@@ -12,9 +12,9 @@ const MuscleDescriptionPage = () => {
   return (
     <div className="flex gap-2">
       <div className="bg-white w-[80%]">
-        {selectedMuscle && selectedMuscle.name}
+        {selectedMuscle ? selectedMuscle.name : "Select a muscle"}
       </div>
-      <div className="bg-white w-[40%] pt-6 px-4">
+      <div className="bg-white w-[30%] pt-6 px-4">
         <Bodymap />
       </div>
     </div>

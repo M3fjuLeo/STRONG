@@ -40,8 +40,8 @@ const Bodymap = () => {
   }
 
   return (
-    <div className="flex gap-20 flex-col md:flex-row items-center justify-center mb-10">
-      <svg viewBox="0 0 660.46 1206.46" fill="none" className="max-h-[80vh]">
+    <div className="flex lg:gap-20 gap-2 lg:flex-row flex-col items-center justify-center mb-10">
+      <svg viewBox="0 0 660.46 1206.46" fill="none" className="max-h-[60vh]">
         <Calves
           id="calves"
           fill="currentColor"
@@ -94,7 +94,7 @@ const Bodymap = () => {
         <FrontBody id="body" />
       </svg>
 
-      <svg viewBox="0 0 660.46 1206.46" fill="none" className="max-h-[80vh]">
+      <svg viewBox="0 0 660.46 1206.46" fill="none" className="max-h-[60vh]">
         <BackTraps
           id="traps"
           fill="currentColor"
@@ -106,6 +106,8 @@ const Bodymap = () => {
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "calves" && "bodymapActive"}
+          onClick={() => handleClick("calves")}
         />
         <Hamstrings
           id="hamstrings"
