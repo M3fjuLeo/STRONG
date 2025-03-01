@@ -1,8 +1,8 @@
 import React from "react";
 
-const Traps = ({ id, fill, stroke, strokeWidth }) => {
+const Traps = ({ id, fill, stroke, strokeWidth, active, onClick }) => {
   return (
-    <g id={id} className={`bodymap`}>
+    <g id={id} className={`bodymap ${active}`} onClick={onClick}>
       <path
         d="M287.92,178.7v20.85c0,10-5.2,13.67-16.13,17.47-3.35-1.33-19.62-7.35-37.88-7.02.31-.25.64-.52,1.01-.81,3.15-2.52,7.46-5.96,10.44-7.35,1.96-.92,6.52-2.88,11.35-4.94,7.4-3.17,15.8-6.78,18.88-8.35,3.68-1.87,9.2-6.86,12.32-9.84Z"
         fill={fill}

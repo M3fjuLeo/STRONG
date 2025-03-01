@@ -1,8 +1,8 @@
 import React from "react";
 
-const RearShoulders = ({ id, fill, stroke, strokeWidth }) => {
+const RearShoulders = ({ id, fill, stroke, strokeWidth, active, onClick }) => {
   return (
-    <g id={id} className={`bodymap`}>
+    <g id={id} className={`bodymap ${active}`} onClick={onClick}>
       <path
         d="M511.59,288.79c-3.24-2.06-8.25-4.62-13.43-4.9-.56-.04-1.2-.06-1.91-.09-6.97-.31-21.03-.93-34.55-7.07-4.38-1.99-8.7-4.55-12.71-7.89-6.97-5.78-13.74-10.96-20.27-15.97-10.06-7.72-19.59-15.02-28.81-23.66,6.14-6.45,17.33-16.23,36.59-15.6h.02c.17,0,16.25,1.4,33.54,11.85,15.31,9.27,34.65,27.7,41.54,63.32Z"
         fill={fill}

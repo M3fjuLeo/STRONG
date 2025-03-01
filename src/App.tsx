@@ -11,8 +11,6 @@ import PageNotFound from "./pages/PageNotFound";
 import MuscleDescriptionPage from "./pages/MuscleDescriptionPage";
 import { Provider } from "react-redux";
 import { store } from "./services/MuscleSlice";
-import { useEffect, useState } from "react";
-import axios from "axios";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,21 +19,6 @@ const queryClient = new QueryClient({
 });
 
 function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:5001/api/data")
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((error) => {
-        console.error("Błąd podczas pobierania danych: ", error);
-      });
-  }, []);
-
-  console.log(data);
-
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>

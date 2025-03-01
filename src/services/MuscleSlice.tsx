@@ -3,10 +3,12 @@ import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 
 interface MuscleState {
   muscleId: string | null;
+  data: any[];
 }
 
 const initialState: MuscleState = {
   muscleId: null,
+  data: [],
 };
 
 const muscleSlice = createSlice({
@@ -15,6 +17,9 @@ const muscleSlice = createSlice({
   reducers: {
     setMuscleId: (state, action: PayloadAction<string | null>) => {
       state.muscleId = action.payload;
+    },
+    setData: (state, action: PayloadAction<any[]>) => {
+      state.data = action.payload;
     },
   },
 });
@@ -32,4 +37,4 @@ export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 // Eksport akcji
-export const { setMuscleId } = muscleSlice.actions;
+export const { setMuscleId, setData } = muscleSlice.actions;

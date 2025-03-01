@@ -63,34 +63,65 @@ const Bodymap = () => {
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "abdominals" && "bodymapActive"}
+          onClick={() => handleClick("abdominals")}
         />
         <Obliques
           id="obliques"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "obliques" && "bodymapActive"}
+          onClick={() => handleClick("obliques")}
         />
-        <Hands id="hands" fill="currentColor" stroke="black" strokeWidth={2} />
+        <Hands
+          id="hands"
+          fill="currentColor"
+          stroke="black"
+          strokeWidth={2}
+          active={muscleId === "hands" && "bodymapActive"}
+          onClick={() => handleClick("hands")}
+        />
         <Forearms
           id="forearms"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "forearms" && "bodymapActive"}
+          onClick={() => handleClick("forearms")}
         />
         <Biceps
           id="biceps"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "biceps" && "bodymapActive"}
+          onClick={() => handleClick("biceps")}
         />
         <FrontShouldres
           id="frontShoulders"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "frontShoulders" && "bodymapActive"}
+          onClick={() => handleClick("frontShoulders")}
         />
-        <Chest id="chest" fill="currentColor" stroke="black" strokeWidth={2} />
-        <Traps id="traps" fill="currentColor" stroke="black" strokeWidth={2} />
+        <Chest
+          id="chest"
+          fill="currentColor"
+          stroke="black"
+          strokeWidth={2}
+          active={muscleId === "chest" && "bodymapActive"}
+          onClick={() => handleClick("chest")}
+        />
+        <Traps
+          id="traps"
+          fill="currentColor"
+          stroke="black"
+          strokeWidth={2}
+          active={muscleId === "traps" && "bodymapActive"}
+          onClick={() => handleClick("traps")}
+        />
         <FrontBody id="body" />
       </svg>
 
@@ -100,6 +131,8 @@ const Bodymap = () => {
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "traps" && "bodymapActive"}
+          onClick={() => handleClick("traps")}
         />
         <BackCalves
           id="calves"
@@ -114,49 +147,72 @@ const Bodymap = () => {
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "hamstrings" && "bodymapActive"}
+          onClick={() => handleClick("hamstrings")}
         />
         <Glutes
           id="glutes"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "glutes" && "bodymapActive"}
+          onClick={() => handleClick("glutes")}
         />
         <BackHands
           id="hands"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "hands" && "bodymapActive"}
+          onClick={() => handleClick("hands")}
         />
         <BackForearms
           id="forearms"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "forearms" && "bodymapActive"}
+          onClick={() => handleClick("forearms")}
         />
         <Triceps
           id="triceps"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "triceps" && "bodymapActive"}
+          onClick={() => handleClick("triceps")}
         />
-        <Lats id="lats" fill="currentColor" stroke="black" strokeWidth={2} />
+        <Lats
+          id="lats"
+          fill="currentColor"
+          stroke="black"
+          strokeWidth={2}
+          active={muscleId === "lats" && "bodymapActive"}
+          onClick={() => handleClick("lats")}
+        />
         <Lowerback
           id="lowerback"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "lowerback" && "bodymapActive"}
+          onClick={() => handleClick("lowerback")}
         />
         <TrapsMiddle
           id="trapsMiddle"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "trapsMiddle" && "bodymapActive"}
+          onClick={() => handleClick("trapsMiddle")}
         />
         <RearShoulders
           id="rearShoulders"
           fill="currentColor"
           stroke="black"
           strokeWidth={2}
+          active={muscleId === "rearShoulders" && "bodymapActive"}
+          onClick={() => handleClick("rearShoulders")}
         />
         <BackBody id="body" />
       </svg>
