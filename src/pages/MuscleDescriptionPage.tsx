@@ -2,6 +2,7 @@ import React from "react";
 import { useAppSelector } from "../services/MuscleSlice";
 import { useMuscles } from "../services/useMuscles";
 import Bodymap from "../ui/Bodymap";
+import TextEditor from "../ui/TextEditor";
 
 const MuscleDescriptionPage = () => {
   const { muscles, isLoading, error } = useMuscles();
@@ -21,6 +22,7 @@ const MuscleDescriptionPage = () => {
       <div className="bg-white w-[80%]">
         <h1 className="font-bold text-xl">{muscleName}</h1>
         <p>{muscleDescription}</p>
+        <TextEditor />
       </div>
       <div className="bg-white w-[30%] pt-6 px-4">
         <Bodymap />

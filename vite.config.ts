@@ -3,6 +3,9 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  define: {
+    global: "window",
+  },
   css: {
     postcss: "./postcss.config.js", // Wskazanie konfiguracji PostCSS
   },
