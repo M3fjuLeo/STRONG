@@ -26,7 +26,7 @@ const Button = ({
       type={type}
       disabled={disabled}
       onClick={onClick}
-      className={`cursor-pointer items-center flex justify-center py-2 px-4 text-white ${
+      className={`cursor-pointer items-center flex justify-center py-2 px-4 ${
         variantClasses[variant] || ""
       } rounded-md`}
     >

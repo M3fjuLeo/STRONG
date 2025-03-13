@@ -2,22 +2,29 @@ import { useState } from "react";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { useAppSelector } from "../services/MuscleSlice";
 import { useCreateEditMuscleDescription } from "../services/useCreateEditMuscleDescription";
+import { useMuscles } from "../services/useMuscles";
 import Button from "./Button";
 import SpinnerMini from "./SpinnerMini";
 
-const TextEditor = () => {
+const TextEditor = ({ setIsEditing }) => {
   const selectedMuscleId = useAppSelector((state) => state.muscle.muscleId);
   const { createEditMuscleDescription, isUpdating } =
     useCreateEditMuscleDescription();
   const [description, setDescription] = useState("");
+  const { muscles } = useMuscles();
+
+  const selectedMuscle = muscles?.find(
+    (muscle) => muscle.name === selectedMuscleId
+  );
+
+  const textareaDescription = selectedMuscle?.description;
 
   const handleSubmit = async () => {
     if (!selectedMuscleId) {
       console.log("No muscle selected!");
       return;
     }
-
-    console.log(description);
+    setIsEditing(false);
 
     createEditMuscleDescription({ id: selectedMuscleId, description });
   };
@@ -25,11 +32,14 @@ const TextEditor = () => {
   return (
     <div className="p-2 flex flex-col gap-2">
       <textarea
+        className="border p-2"
         onChange={(e) => setDescription(e.target.value)}
+        placeholder="Update description about this muscle..."
+        defaultValue={textareaDescription}
         name="muscleDescription"
         id=""
         cols="30"
-        rows="10"
+        rows="6"
       ></textarea>
       <div className="flex justify-end">
         <Button
