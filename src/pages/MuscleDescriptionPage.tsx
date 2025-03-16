@@ -21,8 +21,8 @@ const MuscleDescriptionPage = () => {
   const muscleDescription = selectedMuscle ? selectedMuscle.description : "";
 
   return (
-    <div className="flex gap-2">
-      <div className="bg-white w-[80%] p-4 flex flex-col gap-4">
+    <div className="flex sm:flex-row flex-col-reverse gap-2">
+      <div className="bg-white sm:w-[80%] p-4 flex flex-col gap-4">
         {selectedMuscle ? (
           <div className="flex items-center justify-between">
             <h1 className="font-bold text-xl">{muscleName}</h1>
@@ -43,7 +43,7 @@ const MuscleDescriptionPage = () => {
           <TextEditor setIsEditing={setIsEditing} />
         )}
       </div>
-      <div className="bg-white w-[30%] pt-6 px-4">
+      <div className="bg-white sm:w-[30%] pt-6 px-4">
         <Bodymap />
       </div>
     </div>
