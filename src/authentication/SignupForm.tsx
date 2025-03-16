@@ -6,11 +6,19 @@ import Button from "../ui/Button";
 import SpinnerMini from "../ui/SpinnerMini";
 import { useSignup } from "./useSignup";
 
-const SignupForm = () => {
+interface SignupFormProps {
+  initialData?: { fullName: string; email: string };
+  isEditing: boolean;
+}
+
+const SignupForm = ({ initialData, isEditing = false }: SignupFormProps) => {
   const { register, handleSubmit, getValues, reset, formState } =
-    useForm<FieldValues>();
+    useForm<FieldValues>({
+      defaultValues: initialData || { fullName: "", email: "", password: "" },
+    });
   const { errors } = formState;
-  const { signup, isLoading } = useSignup();
+  const { signup, isLoading: isSigningUp } = useSignup();
+  const { updateUser, isLoading: isUpdating };
 
   const onSubmit: SubmitHandler<FieldValues> = ({
     fullName,

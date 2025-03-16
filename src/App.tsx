@@ -1,8 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import AppLayout from "./components/AppLayout";
 import Exercises from "./pages/Exercises/Exercises";
-import History from "./pages/History";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Settings from "./pages/Settings";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
@@ -11,6 +10,7 @@ import PageNotFound from "./pages/PageNotFound";
 import MuscleDescriptionPage from "./pages/MuscleDescriptionPage";
 import { Provider } from "react-redux";
 import { store } from "./services/MuscleSlice";
+import Rutines from "./pages/Rutines";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,7 +32,7 @@ function App() {
               />
               <Route path="home" element={<Home />} />
               <Route path="exercises" element={<Exercises />} />
-              <Route path="history" element={<History />} />
+              <Route path="Rutines" element={<Rutines />} />
               <Route path="settings" element={<Settings />} />
             </Route>
 

@@ -6,7 +6,11 @@ import { useMuscles } from "../services/useMuscles";
 import Button from "./Button";
 import SpinnerMini from "./SpinnerMini";
 
-const TextEditor = ({ setIsEditing }) => {
+interface TextEditorProps {
+  setIsEditing: (isEditing: boolean) => void;
+}
+
+const TextEditor = ({ setIsEditing }: TextEditorProps) => {
   const selectedMuscleId = useAppSelector((state) => state.muscle.muscleId);
   const { createEditMuscleDescription, isUpdating } =
     useCreateEditMuscleDescription();
@@ -38,8 +42,8 @@ const TextEditor = ({ setIsEditing }) => {
         defaultValue={textareaDescription}
         name="muscleDescription"
         id=""
-        cols="30"
-        rows="6"
+        cols={30}
+        rows={6}
       ></textarea>
       <div className="flex justify-end">
         <Button

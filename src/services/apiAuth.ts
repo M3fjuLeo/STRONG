@@ -33,6 +33,20 @@ export async function signup({ fullName, email, password }: SignUpProps) {
   return data;
 }
 
+export async function updateUser({ fullName, email, password }: SignUpProps) {
+  const { data, error } = await supabase.auth.updateUser({
+    email,
+    password,
+    data: {
+      fullName,
+    },
+  });
+
+  if (error) throw new Error(error.message);
+
+  return data;
+}
+
 export async function getCurrentUser() {
   const { data: session } = await supabase.auth.getSession();
   if (!session.session) return null;
