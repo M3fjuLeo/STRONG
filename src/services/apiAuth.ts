@@ -34,15 +34,15 @@ export async function signup({ fullName, email, password }: SignUpProps) {
 }
 
 export async function updateUser({ fullName, email, password }: SignUpProps) {
+  console.log(password);
   const { data, error } = await supabase.auth.updateUser({
     email,
     password,
-    data: {
-      fullName,
-    },
+    data: { fullName },
   });
 
   if (error) throw new Error(error.message);
+  console.log(data);
 
   return data;
 }

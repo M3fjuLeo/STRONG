@@ -1,46 +1,69 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import AuthHeader from "../ui/AuthHeader";
 import AuthInputRow from "../ui/AuthInputRow";
 import Button from "../ui/Button";
 import SpinnerMini from "../ui/SpinnerMini";
 import { useSignup } from "./useSignup";
+import { useUpdateUser } from "./useUpdateUser";
+import { useUser } from "./useUser";
 
 interface SignupFormProps {
   initialData?: { fullName: string; email: string };
   isEditing: boolean;
 }
 
-const SignupForm = ({ initialData, isEditing = false }: SignupFormProps) => {
+const SignupForm = ({ initialData, isEditing }: SignupFormProps) => {
+  const { user, fullName, email } = useUser();
   const { register, handleSubmit, getValues, reset, formState } =
     useForm<FieldValues>({
-      defaultValues: initialData || { fullName: "", email: "", password: "" },
+      defaultValues: initialData || {
+        fullName,
+        email,
+        password: "",
+      },
     });
+
+  useEffect(() => {
+    if (user) {
+      reset({
+        fullName,
+        email,
+      });
+    }
+  }, [user, reset]);
+
+  console.log(user);
+
   const { errors } = formState;
   const { signup, isLoading: isSigningUp } = useSignup();
-  const { updateUser, isLoading: isUpdating };
+  const { updateUser, isLoading: isUpdating } = useUpdateUser();
 
   const onSubmit: SubmitHandler<FieldValues> = ({
     fullName,
     email,
     password,
   }) => {
-    signup(
-      { fullName, email, password },
-      {
-        onSettled: (data, error, variables, context) => reset(),
-      }
-    );
+    if (isEditing) {
+      updateUser({ fullName, email, password }, { onSettled: () => reset() });
+    } else {
+      signup(
+        { fullName, email, password },
+        {
+          onSettled: () => reset(),
+        }
+      );
+    }
   };
 
   return (
     <div className="flex flex-col gap-6 w-[20rem] pb-2">
       <AuthHeader
-        title="Sign Up"
-        description="Hello! Please enter your details"
+        title={isEditing ? "Settings" : "Sign Up"}
+        description={isEditing ? "" : "Hello! Please enter your details"}
       />
 
-      <form onSubmit={onSubmit} className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
         <AuthInputRow label="Full Name" error={errors?.fullName?.message}>
           <input
             {...register("fullName", { required: "This field is required" })}
@@ -58,7 +81,7 @@ const SignupForm = ({ initialData, isEditing = false }: SignupFormProps) => {
                 message: "Please provide a valid amail adress",
               },
             })}
-            type="mail"
+            type="email"
             id="email"
             className="border rounded-md p-1"
           />
@@ -86,9 +109,18 @@ const SignupForm = ({ initialData, isEditing = false }: SignupFormProps) => {
             className="border rounded-md p-1"
           />
         </AuthInputRow>
-
-        <Button variant="primary" type="submit" disabled={isLoading}>
-          {isLoading ? <SpinnerMini /> : "Create account"}
+        <Button
+          variant="primary"
+          type="submit"
+          disabled={isSigningUp || isUpdating}
+        >
+          {isSigningUp || isUpdating ? (
+            <SpinnerMini />
+          ) : isEditing ? (
+            "Update Profile"
+          ) : (
+            "Create account"
+          )}
         </Button>
       </form>
     </div>

@@ -9,7 +9,7 @@ const Login = () => {
     <div className="flex h-svh justify-center ">
       <div className="lg:flex-1 flex items-center justify-center">
         <div>
-          {loginForm ? <LoginForm /> : <SignupForm />}
+          {loginForm ? <LoginForm /> : <SignupForm isEditing={false} />}
 
           <p className="font-light">
             Don't have an account?{" "}
@@ -26,7 +26,7 @@ const Login = () => {
       </div>
       <div className="lg:flex-1">
         <img
-          src="public/login-image.jpg"
+          src="login-image.jpg"
           alt=""
           className="w-full lg:block hidden h-full object-cover"
         />

@@ -4,9 +4,8 @@ import Heading from "../ui/Heading";
 
 const Settings = () => {
   return (
-    <div className="flex flex-col gap-4">
-      <Heading title="Settings" />
-      <div className="rounded-md bg-white p-2"></div>
+    <div className="flex flex-col gap-4 items-center lg:items-start">
+      <SignupForm isEditing={true} />
     </div>
   );
 };

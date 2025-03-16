@@ -3,12 +3,10 @@ import Logo from "../ui/Logo";
 import DarkModeToggle from "./DarkModeToggle";
 import Logout from "../authentication/Logout";
 import { useUser } from "../authentication/useUser";
-import Button from "../ui/Button";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const { user, isAuthenticated } = useUser();
-  const fullName = user?.user_metadata.fullName?.split(" ")[0] || "User";
+  const { user, isAuthenticated, fullName } = useUser();
   const navigate = useNavigate();
 
   return (
