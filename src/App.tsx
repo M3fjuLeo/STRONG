@@ -10,7 +10,8 @@ import PageNotFound from "./pages/PageNotFound";
 import MuscleDescriptionPage from "./pages/MuscleDescriptionPage";
 import { Provider } from "react-redux";
 import { store } from "./services/MuscleSlice";
-import Rutines from "./pages/Rutines";
+import Routines from "./pages/Routines";
+import Routine from "./pages/Routine";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,7 +33,8 @@ function App() {
               />
               <Route path="home" element={<Home />} />
               <Route path="exercises" element={<Exercises />} />
-              <Route path="Rutines" element={<Rutines />} />
+              <Route path="routines" element={<Routines />} />
+              <Route path="routines/routine/:id" element={<Routine />} />
               <Route path="settings" element={<Settings />} />
             </Route>
 
