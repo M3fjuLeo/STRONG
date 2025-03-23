@@ -33,8 +33,6 @@ const SignupForm = ({ initialData, isEditing }: SignupFormProps) => {
     }
   }, [user, reset]);
 
-  console.log(user);
-
   const { errors } = formState;
   const { signup, isLoading: isSigningUp } = useSignup();
   const { updateUser, isLoading: isUpdating } = useUpdateUser();
@@ -63,13 +61,16 @@ const SignupForm = ({ initialData, isEditing }: SignupFormProps) => {
         description={isEditing ? "" : "Hello! Please enter your details"}
       />
 
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex dark:text-gray-300 flex-col gap-4"
+      >
         <AuthInputRow label="Full Name" error={errors?.fullName?.message}>
           <input
             {...register("fullName", { required: "This field is required" })}
             type="text"
             id="fullName"
-            className="border rounded-md p-1"
+            className="border text-black rounded-md p-1"
           />
         </AuthInputRow>
         <AuthInputRow label="Email" error={errors?.email?.message}>
@@ -83,7 +84,7 @@ const SignupForm = ({ initialData, isEditing }: SignupFormProps) => {
             })}
             type="email"
             id="email"
-            className="border rounded-md p-1"
+            className="border rounded-md p-1 text-black"
           />
         </AuthInputRow>
         <AuthInputRow label="Password" error={errors?.password?.message}>
@@ -91,7 +92,7 @@ const SignupForm = ({ initialData, isEditing }: SignupFormProps) => {
             {...register("password", { required: "This field is required" })}
             type="password"
             id="password"
-            className="border rounded-md p-1"
+            className="border rounded-md p-1 text-black"
           />
         </AuthInputRow>
         <AuthInputRow
@@ -106,7 +107,7 @@ const SignupForm = ({ initialData, isEditing }: SignupFormProps) => {
             })}
             type="password"
             id="passwordConfirm"
-            className="border rounded-md p-1"
+            className="border rounded-md p-1 text-black"
           />
         </AuthInputRow>
         <Button

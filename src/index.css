@@ -8,6 +8,7 @@
 
 .bodymap {
   @apply text-gray-200;
+  @apply dark:text-gray-500;
   @apply hover:text-blue-500;
   @apply duration-200;
   @apply cursor-pointer;
@@ -15,6 +16,7 @@
 
 .bodymapActive {
   @apply text-blue-500;
+  @apply dark:text-blue-500;
 }
 
 @keyframes rotate {

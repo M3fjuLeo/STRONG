@@ -12,8 +12,8 @@ const Routine = () => {
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="h-full items-center flex flex-col gap-8 bg-white p-4 rounded">
+    <div className="flex flex-col dark:text-gray-300 gap-4">
+      <div className="h-full items-center flex flex-col gap-8 bg-white p-4 dark:bg-gray-600 rounded">
         <div className="flex flex-col gap-4">
           <h1 className="font-bold text-3xl">{routine.title}</h1>
           <img
@@ -31,7 +31,7 @@ const Routine = () => {
           </div>
         ))}
       </div>
-      <div className="bg-white p-4">
+      <div className="bg-white rounded dark:bg-gray-600 p-4">
         <h2 className="text-center font-bold text-2xl">More Workouts</h2>
         <div className="flex flex-col md:flex-row items-center flex-wrap gap-2 justify-evenly">
           {routines
@@ -41,7 +41,7 @@ const Routine = () => {
               <Link
                 to={`/routines/routine/${routine.id}`}
                 key={routine.id}
-                className="p-4 bg-white w-80 shadow-lg flex flex-col gap-2"
+                className="p-4 bg-white dark:bg-gray-500 rounded w-80 shadow-lg flex flex-col gap-2"
               >
                 <img className="rounded" src={routine.image} alt="" />
                 <h1 className="font-bold text-center">{routine.title}</h1>

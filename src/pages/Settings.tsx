@@ -1,6 +1,5 @@
 import React from "react";
 import SignupForm from "../authentication/SignupForm";
-import Heading from "../ui/Heading";
 
 const Settings = () => {
   return (

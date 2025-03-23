@@ -17,7 +17,7 @@ const Exercises = () => {
     <div className="">
       <div className="flex gap-4 items-center justify-between mb-6">
         <Modal>
-          <div className="flex items-end gap-4">
+          <div className="flex items-center gap-4">
             <Heading title="Exercises" />
             <Modal.Open opens="new">
               <button className="text-blue-500 flex items-center text-lg cursor-pointer">

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   setMuscleId,
@@ -38,6 +38,24 @@ const Bodymap = () => {
     dispatch(setMuscleId(id));
     navigate("/muscle-description");
   }
+
+  const [strokeColor, setStrokeColor] = useState("");
+
+  useEffect(() => {
+    const handleDarkModeChange = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setStrokeColor(isDark ? "#fff" : "#484a68");
+    };
+
+    handleDarkModeChange();
+    const observer = new MutationObserver(handleDarkModeChange);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="flex lg:gap-20 gap-2 lg:flex-row flex-col items-center justify-center mb-10">
@@ -122,7 +140,7 @@ const Bodymap = () => {
           active={muscleId === "traps" && "bodymapActive"}
           onClick={() => handleClick("traps")}
         />
-        <FrontBody id="body" />
+        <FrontBody id="body" strokeColor={strokeColor} />
       </svg>
 
       <svg viewBox="0 0 660.46 1206.46" fill="none" className="max-h-[60vh]">
@@ -214,7 +232,7 @@ const Bodymap = () => {
           active={muscleId === "rearShoulders" && "bodymapActive"}
           onClick={() => handleClick("rearShoulders")}
         />
-        <BackBody id="body" />
+        <BackBody id="body" strokeColor={strokeColor} />
       </svg>
     </div>
   );

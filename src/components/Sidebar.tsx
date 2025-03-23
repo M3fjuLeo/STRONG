@@ -9,7 +9,7 @@ import Logo from "../ui/Logo";
 
 const Sidebar = () => {
   return (
-    <div className="lg:h-lvh lg:flex lg:relative bg-white p-4 gap-10 lg:flex-col lg:w-[18rem] border-t-[1px] fixed bottom-0 w-full left-0 lg:border-r-[1px] lg:border-t-0">
+    <div className="lg:h-lvh lg:flex lg:relative dark:bg-gray-800 bg-white p-4 gap-10 lg:flex-col lg:w-[18rem] border-t-[1px] fixed bottom-0 w-full left-0 lg:border-r-[1px] dark:border-gray-400 lg:border-t-0">
       <div className="hidden lg:block">
         <Logo />
       </div>
