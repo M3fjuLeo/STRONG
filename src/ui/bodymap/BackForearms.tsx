@@ -1,6 +1,14 @@
 import React from "react";
+import { BodymapMuscleProps } from "../Bodymap";
 
-const BackForearms = ({ id, fill, stroke, strokeWidth, active, onClick }) => {
+const BackForearms = ({
+  id,
+  fill,
+  stroke,
+  strokeWidth,
+  active,
+  onClick,
+}: BodymapMuscleProps) => {
   return (
     <g id={id} className={`bodymap ${active}`} onClick={onClick}>
       <path

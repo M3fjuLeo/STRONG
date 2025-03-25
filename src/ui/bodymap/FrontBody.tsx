@@ -1,6 +1,11 @@
 import React from "react";
 
-const FrontBody = ({ id, strokeColor }) => {
+interface FrontBodyProps {
+  id: string;
+  strokeColor: string;
+}
+
+const FrontBody = ({ id, strokeColor }: FrontBodyProps) => {
   return (
     <g id={id}>
       <line

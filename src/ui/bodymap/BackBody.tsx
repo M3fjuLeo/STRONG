@@ -1,6 +1,11 @@
 import React from "react";
 
-const BackBody = ({ id, strokeColor }) => {
+interface BackBodyProps {
+  id: string;
+  strokeColor: string;
+}
+
+const BackBody = ({ id, strokeColor }: BackBodyProps) => {
   return (
     <g id={id}>
       <path

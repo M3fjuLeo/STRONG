@@ -3,7 +3,11 @@ import ExerciseRow from "./ExerciseRow";
 import { useExercises } from "./useExercises";
 import { Exercise } from "../../services/apiExercises";
 
-const ExercisesTable = ({ filteredValue }) => {
+interface ExercisesTableProps {
+  filteredValue: string;
+}
+
+const ExercisesTable = ({ filteredValue }: ExercisesTableProps) => {
   const { isLoading, exercises } = useExercises();
   const filteredExercises =
     filteredValue === "all" || !filteredValue

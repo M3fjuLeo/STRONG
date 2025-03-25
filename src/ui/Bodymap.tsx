@@ -29,6 +29,15 @@ import Traps from "./bodymap/Traps";
 import TrapsMiddle from "./bodymap/TrapsMiddle";
 import Triceps from "./bodymap/Triceps";
 
+export interface BodymapMuscleProps {
+  id: string;
+  fill: string;
+  stroke: string;
+  strokeWidth: number;
+  active: string | boolean;
+  onClick: () => void;
+}
+
 const Bodymap = () => {
   const navigate = useNavigate();
   const muscleId = useAppSelector((state) => state.muscle.muscleId);

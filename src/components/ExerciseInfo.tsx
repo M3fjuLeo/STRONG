@@ -13,6 +13,9 @@ interface ExerciseInfoProps {
 const ExerciseInfo = ({ onCloseModal, exercise }: ExerciseInfoProps) => {
   const { name, equipment, image, description } = exercise;
 
+  const imageUrl =
+    typeof image === "string" ? image : URL.createObjectURL(image);
+
   return (
     <div className="lg:w-[40rem] w-[20rem] sm:w-[25rem] md:w-[30rem]">
       <div className="flex flex-col gap-8">
@@ -30,7 +33,7 @@ const ExerciseInfo = ({ onCloseModal, exercise }: ExerciseInfoProps) => {
         </div>
 
         <div className="m-auto">
-          <img loading="lazy" src={image} alt="Dumbbell Bench Press" />
+          <img loading="lazy" src={imageUrl} alt="Dumbbell Bench Press" />
         </div>
 
         <p>{description}</p>
