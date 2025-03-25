@@ -16,9 +16,9 @@ const ExerciseInfo = ({ onCloseModal, exercise }: ExerciseInfoProps) => {
   return (
     <div className="lg:w-[40rem] w-[20rem] sm:w-[25rem] md:w-[30rem]">
       <div className="flex flex-col gap-8">
-        <div className="flex items-center justify-between gap-4 bg-gray-50 py-1 lg:py-2 px-2 lg:px-8 rounded-md">
+        <div className="gap-4 relative flex items-center justify-center bg-gray-50 py-1 lg:py-2 px-2 lg:px-8 rounded-md">
           <button
-            className="hover:bg-gray-50 p-2 rounded-md"
+            className="hover:bg-gray-50 left-2 absolute p-2 rounded-md"
             type="button"
             onClick={() => onCloseModal?.()}
           >
@@ -27,7 +27,6 @@ const ExerciseInfo = ({ onCloseModal, exercise }: ExerciseInfoProps) => {
           <h1>
             <span className="font-bold">{name}</span> ({equipment})
           </h1>
-          <button className="text-blue-500">Edit</button>
         </div>
 
         <div className="m-auto">

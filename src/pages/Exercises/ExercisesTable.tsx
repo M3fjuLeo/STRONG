@@ -14,8 +14,8 @@ const ExercisesTable = ({ filteredValue }) => {
         );
 
   return (
-    <div className="border rounded-md bg-white">
-      <div className="p-4 hidden bg-gray-50 sm:grid grid-cols-3">
+    <div className="border rounded dark:bg-gray-700 dark:text-gray-300 dark:border-gray-400 bg-white">
+      <div className="p-4 hidden dark:bg-gray-800 bg-gray-50 sm:grid grid-cols-3">
         <span>EXERCISES</span>
         <span>MUSCLE GROUP</span>
         <span>EQUIPMENT</span>

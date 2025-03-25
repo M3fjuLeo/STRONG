@@ -4,7 +4,6 @@ import DarkModeToggle from "./DarkModeToggle";
 import Logout from "../authentication/Logout";
 import { useUser } from "../authentication/useUser";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   const { user, isAuthenticated, fullName } = useUser();
@@ -28,7 +27,7 @@ const Header = () => {
               className="cursor-pointer hover:text-blue-500 duration-300"
               onClick={() => navigate("/login")}
             >
-              Sign in
+              Log in
             </button>
           )}
         </div>

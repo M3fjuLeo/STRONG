@@ -17,7 +17,7 @@ const DarkModeToggle = () => {
 
   return (
     <ButtonIcon onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-      {theme === "dark" ? <FaRegMoon /> : <HiOutlineSun />}
+      {theme === "dark" ? <HiOutlineSun /> : <FaRegMoon />}
     </ButtonIcon>
   );
 };
