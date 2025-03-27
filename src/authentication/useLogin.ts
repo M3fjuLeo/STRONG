@@ -12,7 +12,7 @@ export function useLogin() {
       loginApi({ email, password }),
     onSuccess: (user) => {
       queryClient.setQueryData(["user"], user.user);
-      navigate("/home", { replace: true });
+      navigate("/home");
     },
 
     onError: (err) => {

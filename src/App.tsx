@@ -12,6 +12,8 @@ import { Provider } from "react-redux";
 import { store } from "./services/MuscleSlice";
 import Routines from "./pages/Routines";
 import Routine from "./pages/Routine";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,7 +27,13 @@ function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route element={<AppLayout />}>
+            <Route
+              element={
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
+              }
+            >
               <Route index element={<Navigate replace to="home" />} />
               <Route
                 path="muscle-description"
@@ -59,6 +67,7 @@ function App() {
                 padding: "16px 24px",
                 backgroundColor: "var(--color-grey-0)",
                 color: "var(--color-grey-700)",
+                pointerEvents: "auto",
               },
             }}
           />
