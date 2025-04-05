@@ -1,50 +1,42 @@
-# React + TypeScript + Vite
+# The STRONG App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to STRONG!
+Discover the details of our fitness app where you can add exercises and follow workout routines. STRONG helps you stay organized and motivated on your fitness journey.
 
-Currently, two official plugins are available:
+![Home page](public/STRONG.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Interactive Muscle Map – Explore an interactive human body map to learn more about specific muscle groups. You can also edit and update information about each muscle.
 
-## Expanding the ESLint configuration
+# Live Site
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Check out the live app here: [STRONG]()
 
-- Configure the top-level `parserOptions` property like this:
+# Key Feautures of STRONG
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+![Login page](public/login-page.png)
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Secure Access – Only verified accounts can log in. New users can easily register and verify their accounts to get started.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+![Exercises page](public/exercises-page.png)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Custom Exercise Library – Add new exercises to the database to build a comprehensive library of movements for your training needs.
+
+![Rutines page](public/rutines-page.png)
+
+Workout Routine Browser – Browse a variety of pre-built training routines tailored to different goals and fitness levels.
+
+![Settings page](public/settings-page.png)
+
+Account Settings Management – Update your user information, including name, email, password, and other personal details at any time.
+
+# Technologies Used
+
+- React for the frontend.
+- Supabase for the database and real-time data updates.
+- React Query for data fetching and caching.
+- React Router for navigation.
+- React Hook Form for efficient form handling.
+- Reduxto manage the state of the interactive human body map.
+- Tailwind CSS for styling the UI, including dark mode.
+- Vite for development environment and build system.
+- React Toast is used for notifications.

@@ -4,8 +4,8 @@ import {
   HiOutlineHome,
 } from "react-icons/hi2";
 import { CiDumbbell } from "react-icons/ci";
-import Link from "../ui/Link";
 import Logo from "../ui/Logo";
+import Link from "../ui/Link";
 
 const Sidebar = () => {
   return (

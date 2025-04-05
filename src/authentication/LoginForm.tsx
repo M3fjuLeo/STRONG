@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AuthHeader from "../ui/AuthHeader";
 import Button from "../ui/Button";
-import ConfirmButton from "../ui/Button";
 import SpinnerMini from "../ui/SpinnerMini";
 import { useLogin } from "./useLogin";
 
