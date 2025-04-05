@@ -1,7 +1,7 @@
 import React from "react";
 
 interface ExerciseInfoProps {
-  onCloseModal: () => void;
+  onCloseModal?: () => void;
   exercise: {
     name: string;
     equipment: string;

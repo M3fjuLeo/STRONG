@@ -4,7 +4,7 @@ import Button from "./Button";
 interface ConfirmDeleteProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   disabled: boolean;
-  onCloseModal: () => void;
+  onCloseModal?: () => void;
 }
 
 const ConfirmDelete = ({
