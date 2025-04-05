@@ -9,7 +9,7 @@ Interactive Muscle Map – Explore an interactive human body map to learn more a
 
 # Live Site
 
-Check out the live app here: [STRONG]()
+Check out the live app here: [STRONG](https://strong-gamma.vercel.app/home)
 
 # Key Feautures of STRONG
 
