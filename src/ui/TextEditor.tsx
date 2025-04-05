@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import "react-quill/dist/quill.snow.css";
 import { useAppSelector } from "../services/MuscleSlice";
 import { useCreateEditMuscleDescription } from "../services/useCreateEditMuscleDescription";
 import { useMuscles } from "../services/useMuscles";
